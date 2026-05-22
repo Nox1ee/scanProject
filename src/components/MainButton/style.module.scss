@@ -1,0 +1,58 @@
+@import '../../styles/breakpoints';
+
+.btn {
+  background: var(--blue-color);
+  padding: 16px;
+
+  font-weight: 500;
+  font-family: var(--font-main);
+  font-size: 22px; 
+
+  color: var(--white-color);
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  transition: all .25s ease-in-out;
+
+  &:hover:not(:disabled):not(.active) {
+    background-color: #3142b3;
+  }
+
+
+  @include mobile {
+    &:hover:not(:disabled):not(.active) {
+      background: var(--blue-color);
+    }
+
+    &:active:not(:disabled):not(.active) {
+      background-color: #3142b3;
+    }
+  }
+}
+
+.active {
+  background: #D2D2D2;
+  color: var(--black-color);
+
+  transition: all .25s ease-in-out;
+
+  &:hover {
+    background: #b4b4b4;
+  }
+
+  @include mobile {
+    &:hover {
+      background: #D2D2D2;
+    }
+
+    &:active {
+      background: #b4b4b4;
+    }
+  }
+}
+
+.disabled {
+  opacity: 50%;
+}

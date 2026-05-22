@@ -1,0 +1,54 @@
+@import '../../styles/breakpoints';
+
+.scrollToTopBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1000;
+  
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--aquamarine-color);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s;
+
+  img {
+    width: 24px;
+    height: 24px;
+    transform: rotate(-90deg);
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  @include tablet {
+    bottom: 120px;
+    right: 20px;
+    width: 46px;
+    height: 46px;
+  }
+
+  @include mobile {
+    bottom: 120px;
+    right: 20px;
+    width: 46px;
+    height: 46px;
+    
+    
+    &:hover {
+      transform: none;
+    }
+    
+    &:active {
+      transform: scale(0.95); // Эффект нажатия пальцем
+    }
+  }
+}

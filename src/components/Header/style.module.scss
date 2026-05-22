@@ -1,0 +1,296 @@
+@import '../../styles/breakpoints';
+
+.header {
+  background: var(--white-color);
+
+  padding: 0 60px;
+
+  position: relative;
+  z-index: 100;
+
+  @include tablet {
+    padding: 0 30px;
+  }
+
+  @include mobile {
+    position: fixed;
+    width: 100%;
+    padding: 0 25px 0 15px;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @include tablet {
+    max-width: 1024px;
+  }
+
+  @include mobile {
+    max-width: 100%;
+  }
+}
+
+.logo {
+  flex-grow: 1;
+  transition: opacity .2s ease;
+
+  @include mobile {
+    flex-grow: 0;
+  }
+
+  &.logoHidden {
+    @include mobile {
+      opacity: 0;
+    }
+  }
+}
+
+.statsMobile {
+  display: none;
+
+  @include mobile {
+    display: block;
+  }
+}
+
+.statsDesktop {
+  @include mobile {
+    display: none;
+  }
+}
+
+.menuOverlay {
+  display: flex;
+  align-items: center;
+  flex-grow: 2;
+  justify-content: space-between;
+
+
+  @include mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 100dvh;
+
+    background-color: var(--dark-teal-color);
+
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 0 25px 80px 20px;
+    z-index: 90;
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+
+    &.menuOpen {
+      transform: translateX(0);
+    }
+  }
+}
+
+.mobileLogoContainer {
+  display: none;
+  height: 90px;
+
+  @include mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.nav {
+  @include mobile {
+    margin-top: 80px;
+
+    margin-bottom: auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.navList {
+  display: flex;
+  gap: 49px;
+
+  @include tablet {
+    gap: 20px;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+  }
+}
+
+.navItem {
+  list-style: none;
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--black-color);
+  
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+
+    background: linear-gradient(90deg, #a4d44d 0%, #008a7b 100%);
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform 0.3s ease-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  @include mobile {
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 1%;
+  }
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @include tablet {
+    gap: 10px;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    width: 100%;
+    max-width: 335px;
+    gap: 15px;
+  }
+}
+
+.btnReg, 
+.btnLogin {
+  border: none;
+  text-decoration: none;
+  color: var(--black-color);
+  font-size: 14px;
+
+  transition: all 0.25s ease-in;
+}
+
+.btnReg {
+  opacity: 40%;
+  background: transparent;
+
+
+  &:hover {
+    opacity: 80%;
+  }
+
+  @include mobile {
+    font-size: 16px;
+  }
+}
+
+.btnLogin {
+  background: var(--aquamarine-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+
+
+  &:hover { 
+    background-color: #000; 
+    color: var(--aquamarine-color); 
+  }
+
+  @include mobile {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    font-size: 20px;
+
+    padding: 15px 0;
+  }
+}
+
+.devider {
+  width: 2px;
+  height: 26px;
+  background: var(--dark-teal-color);
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.profileText {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileName {
+  font-size: 14px;
+  opacity: 70%;
+}
+
+.signOutBtn {
+  border: none;
+  background: transparent;
+
+  text-align: right;
+
+  font-size: 12px;
+  opacity: 40%;
+
+  cursor: pointer;
+
+  transition: all .25s ease-in;
+
+  &:hover {
+    opacity: 100%;
+    transform: translateX(-2px);
+  }
+}
+
+.burgerBtn {
+  background: transparent;
+  border: none;
+  display: none;  
+  cursor: pointer;
+
+  @include mobile {
+    display: block;
+  }
+
+  &.burgerActive {
+    z-index: 100;
+  }
+}

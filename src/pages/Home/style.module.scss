@@ -1,0 +1,295 @@
+@import '../../styles/breakpoints';
+
+.homePage {
+  display: flex;
+  flex-direction: column;
+  gap: 105px;
+
+  padding: 69px 0 118px;
+
+  @include tablet {
+    gap: 95px;
+
+    padding: 50px 0 100px;
+  }
+  
+  @include mobile {
+    gap: 55px;
+
+    padding: 20px 0 40px;
+  }
+}
+
+.title {
+  font-size: 60px;
+  font-weight: 900;
+
+  @include tablet {
+    font-size: 50px;
+  }
+
+  @include mobile {
+    font-size: 28px;
+  }
+}
+
+.subTitle {
+  font-size: 45px;
+  font-weight: 900;
+
+  @include tablet {
+    font-size: 36px;
+  }
+
+  @include mobile {
+    font-size: 28px;
+  }
+}
+
+.hero {
+  display: flex;
+  overflow: hidden;
+
+  p {
+    font-size: 20px;
+
+    margin-top: 20px;
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  button {
+    margin-top: 70px;
+    width: 335px;
+
+    @include mobile {
+      margin-top: 30px;
+      width: 100%;
+    }
+  }
+
+  @include mobile {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+
+.advantages {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+
+  overflow: hidden;
+
+  @include mobile {
+    gap: 15px;
+  }
+}
+
+.advantagesImg {
+  @include mobile {
+    margin-top: 50px;
+
+    width: 900px;
+  }
+}
+
+.tariffs {
+  
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  justify-content: center;
+
+  margin-top: 70px;   
+
+  @include mobile {
+    margin-top: 35px;
+  }
+}
+
+.cardBeginner {
+  &.currentTariff {
+    border: 1px solid var(--orange-color);
+  }
+
+  .cardHeader {
+    background: var(--orange-color);
+  }
+}
+
+.cardPro {
+  &.currentTariff {
+    border: 1px solid var(--aquamarine-color);
+  }
+
+  .cardHeader {
+    background: var(--aquamarine-color);
+  }
+}
+
+.cardBusiness {
+  &.currentTariff {
+    border: 1px solid var(--black-color);
+  }
+
+  .cardHeader {
+    background: var(--black-color);
+    color: var(--white-color);
+  }
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px #00000033;
+  height: 540px;
+  min-width: 430px;
+
+  @include mobile {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+  height: 132px;
+}
+
+.cardHeading {
+  padding: 25px;
+
+  h3 {
+    font-size: 30px;
+    font-weight: 500;
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+}
+
+.cardImage {
+  padding-right: 15px;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px;
+  height: 408px;
+
+  position: relative;
+  
+  button {
+    width: 100%;
+    font-weight: 400;
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  @include mobile {
+    height: 340px;
+  }
+}
+
+.currentTariffLabel {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1%;
+  color: #FFFFFF;
+
+  background-color: #3BA5E0;
+  border-radius: 10px;
+
+  padding: 3px 13px;
+
+  position: absolute;
+  top: 12px;
+  left: 270px;
+
+  @include mobile {
+    left: 65%;
+
+    padding: 2px 10px;
+
+    font-size: 12px;
+  }
+}        
+
+.cardPriceCurrent {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 1%;
+}
+
+.cardPriceOld {
+  font-size: 25px;
+  font-weight: 500;
+  text-decoration: line-through;
+  opacity: 50%;
+
+  margin-left: 19px;
+}
+
+.installment {
+  margin-top: 10px;
+}
+
+.tariffIncludes {
+  figcaption {
+    font-size: 20px;
+    font-weight: 500;
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  ul {
+    margin-top: 10px;
+  }
+
+  li {
+    list-style: none;
+
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 5px;
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('../../assets/home/marker.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}

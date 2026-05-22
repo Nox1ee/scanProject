@@ -1,0 +1,151 @@
+@import '../../styles/breakpoints';
+
+.cardContainer {
+  box-shadow: 0px 0px 20px 0px #00000033;
+  border-radius: 10px;
+  padding: 20px 30px 35px;
+
+  max-width: 641px;
+
+  display: flex;
+  flex-direction: column;
+
+  color: #949494;
+  font-size: 16px;
+
+  overflow: hidden;
+
+  @include tablet {
+    max-width: 100%;
+  }
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+.cardDateContainer {
+  display: flex;
+  gap: 14px;
+
+  .link {
+    color: #949494;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      color: #000000;
+    }
+  }
+}
+
+.title {
+  color: var(--black-color);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 2%;
+
+  margin-top: 24px;
+
+  @include mobile {
+    font-size: 19px;
+
+    margin-top: 21px;
+  }
+}
+
+.categoryContainer {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  @include mobile {
+    margin-top: 20px;
+  }
+}
+
+.category {
+  font-size: 12px;
+  padding: 4px 14px;
+  border-radius: 5px;
+
+  &.techNews {
+    background: #FFB64F;
+    color: #000000;
+  }
+
+  &.announcement {
+    background: #2e42c0;
+    color: #FFFFFF;
+  }
+
+  &.digest {
+    background: #1f7223;
+    color: #FFFFFF;
+  }
+
+  @include mobile {
+    font-size: 10px;
+  }
+}
+
+.imageContainer {
+
+  margin-top: 14px;
+
+  .imageItem {
+    max-width: 581px;
+
+    @include tablet {
+      max-width: 100%;
+    }
+  }
+}
+
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+
+.cardFooter {
+  margin-top: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.readMoreBtn {
+  display: block;
+
+  font-size: 16px;
+  text-decoration: none;
+
+  color: var(--black-color);
+  background: var(--aquamarine-color);
+
+  padding: 15px 30px;
+  border-radius: 5px;
+
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    color: var(--aquamarine-color);
+    background: var(--black-color);
+  }
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+.wordCount {
+  margin-left: auto;
+  align-self: flex-end;
+}

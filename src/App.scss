@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import './styles/global.scss';
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: var(--blue-color) #f1f5f9;
+  
+  /* --- Стили для Chrome, Edge, Safari --- */
+
+  /* Фон под ползунком */
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9; 
+    border-radius: 8px;
+  }
+
+  /* Сам ползунок */
+  ::-webkit-scrollbar-thumb {
+    background: var(--blue-color); 
+    border-radius: 8px;
+  }
+
+  /* Ползунок при наведении */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #475569; 
+  }
+}
+
+:target {
+  scroll-margin-top: 70px;
+}

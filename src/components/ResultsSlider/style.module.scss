@@ -1,0 +1,197 @@
+@import '../../styles/breakpoints';
+
+.resultsSlider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  // Запрет на выделения текста 
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none;      /* IE 10 и старые версии */
+  user-select: none;         /* Стандартное свойство */
+}
+
+.tableWrapper {
+  flex-grow: 1;
+  display: flex;
+  border: 2px solid #029491;
+  border-radius: 10px;
+  overflow: hidden;
+
+  @include mobile {
+    border: none;
+    flex-direction: column;
+
+    box-shadow: 0px 0px 20px 0px #00000033;
+  }
+}
+
+.sidebar {
+  padding: 17px 0px;
+
+  width: 133px;
+  background-color: #029491;
+  flex-shrink: 0;
+
+  color: #FFFFFF;
+  
+  .cell {
+    font-size: 20px;
+    font-weight: 500;
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  @include mobile {
+    width: 100%;
+
+    padding: 23px 15px
+  }
+}
+
+.sliderContainer {
+  display: flex;
+  flex-grow: 1;
+  width: 0;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  :global {
+    .slick-slider,
+    .slick-list,
+    .slick-track {
+      @include mobile {
+        height: 100%;
+        display: flex !important;
+      }
+    }
+
+    .slick-list {
+      padding: 18px 10px 26px;
+    }
+
+    .slick-slide {
+      @include mobile {
+        height: auto;
+
+        & > div { 
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.cell {
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+
+  @include mobile {
+    height: 40px;
+  }
+}
+
+.sidebar,
+.dataColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+
+  @include mobile {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+}
+
+.dataColumn {
+  border-right: 2px solid #94949471;
+
+  .cell {
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  @include mobile {
+    border: none;
+  }
+}
+
+
+.nextArrow,
+.prevArrow {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: opacity 0.3s, transform 0.3s;
+
+  img {
+    display: block;
+  }
+
+  &:hover:not(:disabled) {
+    transform: scale(1.1);
+  }
+
+  &:disabled {
+    opacity: 20%;
+    cursor: default;
+  }
+
+  @include mobile {
+    &:hover:not(:disabled) {
+      transform: none;
+    }
+
+    &:active:not(:disabled) {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.prevArrow {
+  transform: rotate(180deg);
+  
+  &:hover:not(:disabled) {
+    transform: rotate(180deg) scale(1.1);
+  }
+
+  @include mobile {
+    &:hover:not(:disabled) {
+      transform: rotate(180deg);
+    }
+
+    &:active:not(:disabled) {
+      transform: rotate(180deg) scale(1.1);
+    }
+  }
+}
+
+
+.spinner {
+  margin: 0 auto;
+  align-self: center;
+}
+
+.dataNotFound {
+  align-self: center;
+  margin: 0 auto;
+
+  font-size: 24px;
+}

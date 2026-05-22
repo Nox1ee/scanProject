@@ -1,0 +1,130 @@
+@import '../../styles/breakpoints';
+
+.searchPage {
+  display: flex;
+  justify-content: space-between;
+  padding: 69px 0 64px; 
+
+  position: relative;
+  overflow: hidden;
+
+  @include tablet {
+    padding: 40px 0 40px;
+
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  @include mobile {
+    padding: 20px 0;
+
+    gap: 24px;
+  }
+}
+
+.searchContentHeading {
+  .title {
+    font-size: 40px;
+    font-weight: 900;
+
+    @include mobile {
+      font-size: 28px;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: 400;
+
+    &:not(:last-child) {
+      margin-top: 25px;
+
+      @include mobile {
+        margin-top: 19px;
+      }
+    }
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+}
+
+.searchFormWrapper {
+  margin-top: 47px;
+
+  @include tablet {
+    display: flex;
+    justify-content: center;
+  }
+
+  @include mobile {
+    margin-top: 20px;
+  }
+}
+
+.searchImages {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+
+  @include tablet {
+    justify-content: center;
+  }
+}
+
+.searchPageImages {
+  position: absolute;
+}
+
+.documentImage,
+.foldersImage {
+  position: absolute;
+}
+
+.documentImage {
+  top: 50px;
+  left: 900px;
+
+  @include tablet {
+    top: -550px;
+    left: 550px;
+  }
+
+  @include mobile {
+    top: -650px;
+    left: 250px;
+
+    width: 60px;
+  }
+}
+
+.foldersImage {
+  top: 60px;
+  left: 1170px;
+
+  @include tablet {
+    top: -550px;
+    left: 750px;
+  }
+
+  @include mobile {
+    top: -530px;
+    left: 250px;
+
+    width: 100px;
+  }
+}
+
+
+.mainSearchImage {
+  
+
+  @include mobile {
+    width: 100%;
+    padding-left: 36px;
+  }
+}
+
+

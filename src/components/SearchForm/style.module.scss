@@ -1,0 +1,207 @@
+@import '../../styles/breakpoints';
+
+.searchForm {
+  box-shadow: 0px 0px 20px 0px #00000033;
+  border-radius: 10px;
+
+  height: 543px;
+  width: 872px;
+
+  padding: 30px 44px;
+
+  display: flex;
+  justify-content: space-between;
+
+  fieldset { // Сброс стилей у fieldset
+    border: none;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+  }  
+
+  @include mobile {
+    width: 100%;
+    height: 100%;
+
+    padding: 24px 14px;
+
+    flex-direction: column;
+  }
+}
+
+.searchInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.searchInputsItem {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  label {
+    font-weight: 400;
+  }
+
+  sup {
+    font-size: 25px;
+  }
+
+  & > select,
+  input {
+    padding: 13px 22px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 0px #0000000D;
+    border: 1px solid #C7C7C7;
+
+    width: 242px;
+
+    font-family: var(--font-main);
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  & > input {
+    text-align: center;
+
+    &::placeholder {
+      opacity: 40%;
+    }
+  }
+
+  &.searchInputsDate {
+
+    legend {
+      margin-bottom: 20px;
+    }
+
+    :global(.ant-picker-clear) { // Изменение стилей у крестика, datepicker
+      right: 12px !important;
+
+      @include mobile {
+        opacity: 100%;
+      }
+
+      & > span {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.datePickerWrapper {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+
+  input {
+    width: 176px;
+
+    @include mobile {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.datePicker {
+  font-family: var(--font-main);
+  box-shadow: 0px 0px 20px 0px #0000000D;
+  border: 1px solid #C7C7C7;
+  padding: 10px;
+}
+
+.searchOptions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include mobile {
+    margin-top: 40px;
+    flex-direction: row;
+  }
+}
+
+.checkboxFilters {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  label {
+    display: flex;
+    gap: 17px;
+
+    font-weight: 400;
+
+    &.disabled {
+      opacity: 40%;
+    }
+  }
+
+  input {
+    appearance: none;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    padding: 2px;
+  }
+
+  input::after {
+    content: '';
+    position: absolute;
+    background-image: url('../../assets//search/checkbox-marker.svg');
+    background-repeat: no-repeat;
+
+    transition: 500ms;
+  }
+
+  input:checked::after {
+    width: 15px;
+    height: 15px;
+  }
+
+  input:disabled {
+    opacity: 40%;
+  }
+
+  @include mobile {
+    &.desktop {
+      display: none;
+    }
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-self: flex-end;
+
+  button {
+    width: 305px;
+
+    @include mobile {
+      width: 100%;
+      font-size: 20px;
+    }
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 3%;
+    color: #949494;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+}

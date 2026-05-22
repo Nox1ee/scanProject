@@ -1,0 +1,118 @@
+@import '../../styles/breakpoints';
+
+.sliderContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  // Запрет на выделения текста 
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none;      /* IE 10 и старые версии */
+  user-select: none;         /* Стандартное свойство */
+}
+
+:global(.slick-slider) {
+  padding: 0 15px;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+:global(.slick-list) {
+  padding: 20px 0;
+  margin: 0 -15px;
+}
+
+.slideItem {
+  padding: 0 15px; 
+  outline: none;
+}
+
+.card {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 15px 0px #00000033;
+
+  border-radius: 10px;
+  padding: 30px 20px;
+
+  display: flex !important;
+  flex-direction: column;
+  gap: 20px;
+
+  height: 225px;
+
+  img {
+    width: 64px;
+    height: 64px;
+
+    @include mobile {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 400;
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+}
+
+.prevArrow,
+.nextArrow {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: opacity 0.3s, transform 0.3s;
+
+  img {
+    display: block;
+  }
+
+  &:hover:not(:disabled) {
+    transform: scale(1.1);
+  }
+
+  &:disabled {
+    opacity: 20%;
+    cursor: default;
+  }
+
+  @include mobile {
+    &:hover:not(:disabled) {
+      transform: none;
+    }
+
+    &:active:not(:disabled) {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.prevArrow {
+  transform: rotate(180deg);
+  
+  &:hover:not(:disabled) {
+    transform: rotate(180deg) scale(1.1);
+  }
+
+  @include mobile {
+    &:hover:not(:disabled) {
+      transform: rotate(180deg);
+    }
+
+    &:active:not(:disabled) {
+      transform: rotate(180deg) scale(1.1);
+    }
+  }
+}
+
+
+
